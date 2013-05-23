@@ -11,7 +11,7 @@ This library allows [Delegance][1] to work with Amazon's [SQS][2] and
 
 Add the following dependency to your `project.clj` file:
 
-    [delegance/amazon-web-services "0.1.0-SNAPSHOT"]
+    [delegance/amazon-web-services "0.1.0"]
 
 ## Usage
 
