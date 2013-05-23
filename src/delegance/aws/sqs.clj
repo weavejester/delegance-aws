@@ -15,7 +15,10 @@
     (sqs/delete client queue id)))
 
 (defn- sqs-client [cred]
-  (sqs/create-client (:access-key cred) (:secret-key cred)))
+  (let [client (sqs/create-client (:access-key cred) (:secret-key cred))]
+    (when-let [endpoint (:endpoint cred)]
+      (.setEndpoint client endpoint))
+    client))
 
 (defn sqs-queue
   "Create a queue interface for Delegance, based around Amazon SQS, which
@@ -23,6 +26,7 @@
   the following keys:
     :access-key - your AWS access key
     :secret-key - your AWS secret key
+    :endpoint   - the AWS endpoint (optional)
     :queue      - the name of the queue to push messages to"
   [cred]
   (SQSQueue. (sqs-client cred) (:queue cred)))
