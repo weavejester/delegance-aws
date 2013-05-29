@@ -6,4 +6,5 @@
   :dependencies [[org.clojure/clojure "1.4.0"]
                  [delegance "0.1.1"]
                  [com.cemerick/rummage "1.0.1"]
-                 [com.cemerick/bandalore "0.0.3"]])
+                 [com.cemerick/bandalore "0.0.3"]
+                 [clj-aws-s3 "0.3.6"]])
