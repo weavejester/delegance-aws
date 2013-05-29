@@ -1,4 +1,4 @@
-(defproject delegance/amazon-web-services "0.1.1"
+(defproject delegance/amazon-web-services "0.1.2"
   :description "Implementations of Delegance protocols for AWS"
   :url "https://github.com/weavejester/delegance-aws"
   :license {:name "Eclipse Public License"
