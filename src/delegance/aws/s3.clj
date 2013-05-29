@@ -6,9 +6,9 @@
 (deftype S3Store [cred bucket]
   KeyValueStore
   (get! [_ key]
-    (read-string (slurp (:content (s3/get-object cred bucket key)))))
+    (read-string (slurp (:content (s3/get-object cred bucket (str key))))))
   (put [_ key value]
-    (s3/put-object cred bucket key (pr-str value)))
+    (s3/put-object cred bucket (str key) (pr-str value)))
   (modify* [store key func]
     (put store key (func (get! store key)))))
 
